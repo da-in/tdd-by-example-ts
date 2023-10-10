@@ -3,10 +3,8 @@ import { Dollar } from './index'
 describe('화폐 예제', () => {
   it('testMultiplication', () => {
     const five: Dollar = new Dollar(5)
-    let product: Dollar = five.times(2)
-    expect(product).toMatchObject(new Dollar(10))
-    product = five.times(3)
-    expect(product).toMatchObject(new Dollar(15))
+    expect(five.times(2)).toMatchObject(new Dollar(10))
+    expect(five.times(3)).toMatchObject(new Dollar(15))
   })
 
   it('testEquality', () => {
