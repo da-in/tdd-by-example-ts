@@ -1,9 +1,10 @@
 export class Money {
 }
 
-export class Dollar {
+export class Dollar extends Money {
   #amount: number
   constructor (amount: number) {
+    super()
     this.#amount = amount
   }
 
