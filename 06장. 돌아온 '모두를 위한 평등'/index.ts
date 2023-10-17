@@ -1,3 +1,6 @@
+export class Money {
+}
+
 export class Dollar {
   #amount: number
   constructor (amount: number) {
