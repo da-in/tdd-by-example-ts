@@ -1,20 +1,24 @@
 export class Money {
+  protected _amount: number
+
+  constructor (amount: number) {
+    this._amount = amount
+  }
 }
 
 export class Dollar extends Money {
-  #amount: number
   constructor (amount: number) {
-    super()
-    this.#amount = amount
+    super(amount)
+    this._amount = amount
   }
 
   times (multiplier: number) {
-    return new Dollar(this.#amount * multiplier)
+    return new Dollar(this._amount * multiplier)
   }
 
   equals (object: object) {
     const dollar = object as Dollar
-    return this.#amount === dollar.#amount
+    return this._amount === dollar._amount
   }
 }
 
