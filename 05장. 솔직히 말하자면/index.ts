@@ -13,3 +13,19 @@ export class Dollar {
     return this.#amount === dollar.#amount
   }
 }
+
+export class Franc {
+  #amount: number
+  constructor (amount: number) {
+    this.#amount = amount
+  }
+
+  times (multiplier: number) {
+    return new Franc(this.#amount * multiplier)
+  }
+
+  equals (object: object) {
+    const franc = object as Franc
+    return this.#amount === franc.#amount
+  }
+}

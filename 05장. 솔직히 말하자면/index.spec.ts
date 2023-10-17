@@ -1,4 +1,4 @@
-import { Dollar } from './index'
+import { Dollar, Franc } from './index'
 
 describe('화폐 예제', () => {
   it('testMultiplication', () => {
