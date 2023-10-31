@@ -7,7 +7,7 @@ export class Money {
 
   equals (object: object) {
     const money: Money = object as Money
-    return this._amount === money._amount
+    return this._amount === money._amount && money instanceof this.constructor
   }
 }
 
