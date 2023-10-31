@@ -31,9 +31,4 @@ export class Franc extends Money {
   times (multiplier: number) {
     return new Franc(this._amount * multiplier)
   }
-
-  equals (object: object) {
-    const money: Money = object as Money
-    return this._amount === money._amount
-  }
 }
