@@ -22,7 +22,7 @@ export class Dollar extends Money {
   }
 }
 
-export class Franc {
+export class Franc extends Money {
   #amount: number
   constructor (amount: number) {
     this.#amount = amount
