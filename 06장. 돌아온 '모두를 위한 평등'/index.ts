@@ -17,8 +17,8 @@ export class Dollar extends Money {
   }
 
   equals (object: object) {
-    const dollar: Money = object as Money
-    return this._amount === dollar._amount
+    const money: Money = object as Money
+    return this._amount === money._amount
   }
 }
 
