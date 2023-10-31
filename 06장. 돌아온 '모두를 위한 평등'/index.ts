@@ -33,7 +33,7 @@ export class Franc extends Money {
   }
 
   equals (object: object) {
-    const franc: Money = object as Money
-    return this._amount === franc._amount
+    const money: Money = object as Money
+    return this._amount === money._amount
   }
 }
