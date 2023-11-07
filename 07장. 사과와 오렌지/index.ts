@@ -1,13 +1,15 @@
-export class Money {
+export abstract class Money {
   protected _amount: number
 
-  constructor (amount: number) {
+  protected constructor (amount: number) {
     this._amount = amount
   }
 
   static dollar (amount: number): Dollar {
     return new Dollar(amount)
   }
+
+  abstract times (multiplier: number): Money
 
   equals (object: object) {
     const money: Money = object as Money
