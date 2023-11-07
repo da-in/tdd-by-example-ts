@@ -24,13 +24,15 @@ export abstract class Money {
 }
 
 export class Dollar extends Money {
+  #currency: string
   constructor (amount: number) {
     super(amount)
     this._amount = amount
+    this.#currency = 'USD'
   }
 
   currency (): string {
-    return 'USD'
+    return this.#currency
   }
 
   times (multiplier: number): Money {
