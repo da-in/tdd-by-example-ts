@@ -1,5 +1,6 @@
 export abstract class Money {
   protected _amount: number
+  protected _currency: string
 
   protected constructor (amount: number) {
     this._amount = amount
@@ -13,7 +14,9 @@ export abstract class Money {
     return new Franc(amount)
   }
 
-  abstract currency (): string
+  currency (): string {
+    return this._currency
+  }
 
   abstract times (multiplier: number): Money
 
