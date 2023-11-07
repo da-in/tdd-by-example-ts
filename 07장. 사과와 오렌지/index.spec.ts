@@ -1,4 +1,4 @@
-import { Franc, Money } from './index'
+import { Money } from './index'
 
 describe('화폐 예제', () => {
   it('testMultiplication', () => {
@@ -10,14 +10,14 @@ describe('화폐 예제', () => {
   it('testEquality', () => {
     expect(Money.dollar(5).equals(Money.dollar(5))).toBeTruthy()
     expect(Money.dollar(5).equals(Money.dollar(6))).toBeFalsy()
-    expect(new Franc(5).equals(new Franc(5))).toBeTruthy()
-    expect(new Franc(5).equals(new Franc(6))).toBeFalsy()
-    expect(new Franc(5).equals(Money.dollar(5))).toBeFalsy()
+    expect(Money.franc(5).equals(Money.franc(5))).toBeTruthy()
+    expect(Money.franc(5).equals(Money.franc(6))).toBeFalsy()
+    expect(Money.franc(5).equals(Money.dollar(5))).toBeFalsy()
   })
 
   it('testFrancMultiplication', () => {
-    const five: Franc = new Franc(5)
-    expect(five.times(2)).toMatchObject(new Franc(10))
-    expect(five.times(3)).toMatchObject(new Franc(15))
+    const five: Money = Money.franc(5)
+    expect(five.times(2)).toMatchObject(Money.franc(10))
+    expect(five.times(3)).toMatchObject(Money.franc(15))
   })
 })
