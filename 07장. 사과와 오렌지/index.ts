@@ -17,7 +17,7 @@ export class Dollar extends Money {
     this._amount = amount
   }
 
-  times (multiplier: number) {
+  times (multiplier: number): Money {
     return new Dollar(this._amount * multiplier)
   }
 }
@@ -28,7 +28,7 @@ export class Franc extends Money {
     this._amount = amount
   }
 
-  times (multiplier: number) {
+  times (multiplier: number): Money {
     return new Franc(this._amount * multiplier)
   }
 }
