@@ -5,6 +5,10 @@ export class Money {
     this._amount = amount
   }
 
+  static dollar (amount: number): Dollar {
+    return new Dollar(amount)
+  }
+
   equals (object: object) {
     const money: Money = object as Money
     return this._amount === money._amount && money instanceof this.constructor
