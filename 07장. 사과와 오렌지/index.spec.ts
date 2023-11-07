@@ -1,8 +1,8 @@
-import { Dollar, Franc } from './index'
+import { Dollar, Franc, Money } from './index'
 
 describe('화폐 예제', () => {
   it('testMultiplication', () => {
-    const five: Dollar = new Dollar(5)
+    const five: Dollar = Money.dollar(5)
     expect(five.times(2)).toMatchObject(new Dollar(10))
     expect(five.times(3)).toMatchObject(new Dollar(15))
   })
