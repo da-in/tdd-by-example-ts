@@ -13,6 +13,8 @@ export abstract class Money {
     return new Franc(amount)
   }
 
+  abstract currency (): string
+
   abstract times (multiplier: number): Money
 
   equals (object: object) {
