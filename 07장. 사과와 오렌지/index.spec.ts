@@ -20,4 +20,9 @@ describe('화폐 예제', () => {
     expect(five.times(2)).toMatchObject(Money.franc(10))
     expect(five.times(3)).toMatchObject(Money.franc(15))
   })
+
+  it('testCurrency', () => {
+    expect(Money.dollar(1).currency()).toBe('USD')
+    expect(Money.franc(1).currency()).toBe('CHF')
+  })
 })
