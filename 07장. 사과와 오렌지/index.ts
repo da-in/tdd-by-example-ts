@@ -5,7 +5,7 @@ export abstract class Money {
     this._amount = amount
   }
 
-  static dollar (amount: number): Dollar {
+  static dollar (amount: number): Money {
     return new Dollar(amount)
   }
 
