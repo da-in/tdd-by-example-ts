@@ -45,7 +45,7 @@ export class Dollar extends Money {
 
 export class Franc extends Money {
   #currency: string
-  constructor (amount: number) {
+  constructor (amount: number, currency: string) {
     super(amount)
     this._amount = amount
     this.#currency = 'CHF'
