@@ -11,7 +11,7 @@ export abstract class Money {
   }
 
   static franc (amount: number): Money {
-    return new Franc(amount, null)
+    return new Franc(amount, 'CHF')
   }
 
   currency (): string {
