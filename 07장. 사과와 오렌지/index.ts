@@ -7,7 +7,7 @@ export abstract class Money {
   }
 
   static dollar (amount: number): Money {
-    return new Dollar(amount)
+    return new Dollar(amount, 'USD')
   }
 
   static franc (amount: number): Money {
@@ -28,10 +28,10 @@ export abstract class Money {
 
 export class Dollar extends Money {
   #currency: string
-  constructor (amount: number) {
+  constructor (amount: number, currency: string) {
     super(amount)
     this._amount = amount
-    this.#currency = 'USD'
+    this.#currency = currency
   }
 
   currency (): string {
@@ -39,7 +39,7 @@ export class Dollar extends Money {
   }
 
   times (multiplier: number): Money {
-    return new Dollar(this._amount * multiplier)
+    return Money.dollar(this._amount * multiplier)
   }
 }
 
