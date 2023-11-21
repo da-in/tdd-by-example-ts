@@ -11,7 +11,7 @@ export abstract class Money {
   }
 
   static franc (amount: number): Money {
-    return new Franc(amount)
+    return new Franc(amount, null)
   }
 
   currency (): string {
@@ -56,6 +56,6 @@ export class Franc extends Money {
   }
 
   times (multiplier: number): Money {
-    return new Franc(this._amount * multiplier)
+    return new Franc(this._amount * multiplier, null)
   }
 }
