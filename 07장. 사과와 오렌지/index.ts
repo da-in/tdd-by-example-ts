@@ -48,7 +48,7 @@ export class Franc extends Money {
   constructor (amount: number, currency: string) {
     super(amount)
     this._amount = amount
-    this.#currency = 'CHF'
+    this.#currency = currency
   }
 
   currency (): string {
