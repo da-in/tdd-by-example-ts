@@ -1,4 +1,4 @@
-import { Money } from './index'
+import { Franc, Money } from './index'
 
 describe('화폐 예제', () => {
   it('testMultiplication', () => {
@@ -24,5 +24,9 @@ describe('화폐 예제', () => {
   it('testCurrency', () => {
     expect(Money.dollar(1).currency()).toBe('USD')
     expect(Money.franc(1).currency()).toBe('CHF')
+  })
+
+  it('testDifferentClassEquality', () => {
+    expect(new Money(10, 'CHF').equals(new Franc(10, 'CHF'))).toBeTruthy()
   })
 })
