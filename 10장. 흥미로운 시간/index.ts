@@ -1,8 +1,8 @@
-export abstract class Money {
+export class Money {
   protected _amount: number
   protected _currency: string
 
-  protected constructor (amount: number, currency: string) {
+  constructor (amount: number, currency: string) {
     this._amount = amount
     this._currency = currency
   }
@@ -19,7 +19,9 @@ export abstract class Money {
     return this._currency
   }
 
-  abstract times (multiplier: number): Money
+  times (multiplier: number): Money {
+    return null
+  }
 
   equals (object: object) {
     const money: Money = object as Money
