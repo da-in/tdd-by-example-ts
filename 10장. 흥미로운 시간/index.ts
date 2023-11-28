@@ -27,6 +27,10 @@ export class Money {
     const money: Money = object as Money
     return this._amount === money._amount && money instanceof this.constructor
   }
+
+  toString (): string {
+    return this._amount + ' ' + this._currency
+  }
 }
 
 export class Dollar extends Money {
