@@ -20,7 +20,7 @@ export class Money {
   }
 
   times (multiplier: number): Money {
-    return null
+    return new Money(this._amount * multiplier, this._currency)
   }
 
   equals (object: object) {
@@ -43,10 +43,6 @@ export class Dollar extends Money {
   currency (): string {
     return this._currency
   }
-
-  times (multiplier: number): Money {
-    return new Money(this._amount * multiplier, this._currency)
-  }
 }
 
 export class Franc extends Money {
@@ -58,9 +54,5 @@ export class Franc extends Money {
 
   currency (): string {
     return this._currency
-  }
-
-  times (multiplier: number): Money {
-    return new Money(this._amount * multiplier, this._currency)
   }
 }
