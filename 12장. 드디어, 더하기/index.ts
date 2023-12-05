@@ -31,6 +31,10 @@ export class Money {
   toString (): string {
     return this._amount + ' ' + this._currency
   }
+
+  plus (addend: Money) {
+    return new Money(this._amount + addend._amount, this._currency)
+  }
 }
 
 export class Dollar extends Money {
