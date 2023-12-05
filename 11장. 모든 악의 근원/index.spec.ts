@@ -1,4 +1,4 @@
-import { Franc, Money } from './index'
+import { Money } from './index'
 
 describe('화폐 예제', () => {
   it('testMultiplication', () => {
@@ -13,18 +13,8 @@ describe('화폐 예제', () => {
     expect(Money.franc(5).equals(Money.dollar(5))).toBeFalsy()
   })
 
-  it('testFrancMultiplication', () => {
-    const five: Money = Money.franc(5)
-    expect(five.times(2)).toMatchObject(Money.franc(10))
-    expect(five.times(3)).toMatchObject(Money.franc(15))
-  })
-
   it('testCurrency', () => {
     expect(Money.dollar(1).currency()).toBe('USD')
     expect(Money.franc(1).currency()).toBe('CHF')
-  })
-
-  it('testDifferentClassEquality', () => {
-    expect(new Money(10, 'CHF').equals(new Franc(10, 'CHF'))).toBeTruthy()
   })
 })
