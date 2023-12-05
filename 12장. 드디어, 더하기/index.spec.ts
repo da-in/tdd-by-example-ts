@@ -21,5 +21,6 @@ describe('화폐 예제', () => {
   it('testSimpleAddition', () => {
     const sum: Money = Money.dollar(5).plus(Money.dollar(5))
     expect(Money.dollar(10)).toMatchObject(sum)
+    expect(Money.dollar(10)).toMatchObject(reduced)
   })
 })
