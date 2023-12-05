@@ -17,4 +17,9 @@ describe('화폐 예제', () => {
     expect(Money.dollar(1).currency()).toBe('USD')
     expect(Money.franc(1).currency()).toBe('CHF')
   })
+
+  it('testSimpleAddition', () => {
+    const sum: Money = Money.dollar(5).plus(Money.dollar(5))
+    expect(Money.dollar(10)).toMatchObject(sum)
+  })
 })
