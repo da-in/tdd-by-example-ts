@@ -1,6 +1,10 @@
 export interface Expression {}
 
-export class Bank {}
+export class Bank {
+  reduce (source: Expression, to: string): Money {
+    return null
+  }
+}
 
 export class Money implements Expression {
   protected _amount: number
