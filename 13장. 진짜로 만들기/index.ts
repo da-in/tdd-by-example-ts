@@ -9,6 +9,8 @@ export class Bank {
 export class Sum {
   augend: Money
   addend: Money
+
+  constructor (augend: Money, addend: Money) {}
 }
 
 export class Money implements Expression {
