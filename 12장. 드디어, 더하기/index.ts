@@ -1,3 +1,5 @@
+export interface Expression {}
+
 export class Money {
   protected _amount: number
   protected _currency: string
