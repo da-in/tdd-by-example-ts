@@ -6,6 +6,11 @@ export class Bank {
   }
 }
 
+export class Sum {
+  augend: Money
+  addend: Money
+}
+
 export class Money implements Expression {
   protected _amount: number
   protected _currency: string
