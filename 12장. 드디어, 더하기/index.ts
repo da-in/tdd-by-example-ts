@@ -2,7 +2,7 @@ export interface Expression {}
 
 export class Bank {
   reduce (source: Expression, to: string): Money {
-    return null
+    return Money.dollar(10)
   }
 }
 
