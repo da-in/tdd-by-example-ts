@@ -46,7 +46,7 @@ export class Money implements Expression {
   }
 
   plus (addend: Money): Expression {
-    return new Money(this._amount + addend._amount, this._currency)
+    return new Sum(this, addend)
   }
 }
 
