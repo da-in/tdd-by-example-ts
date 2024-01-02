@@ -1,4 +1,4 @@
-import { type Expression, Money, Bank } from './index'
+import { type Expression, Money, Bank, Sum } from './index'
 
 describe('화폐 예제', () => {
   it('testMultiplication', () => {
@@ -32,5 +32,12 @@ describe('화폐 예제', () => {
     const sum: Sum = result as Sum
     expect(five).toMatchObject(sum.augend)
     expect(five).toMatchObject(sum.addend)
+  })
+
+  it('testReduceSum', () => {
+    const sum: Expression = new Sum(Money.dollar(3), Money.dollar(4))
+    const bank: Bank = new Bank()
+    const result: Money = bank.reduce(sum, 'USD')
+    expect(Money.dollar(7)).toMatchObject(result)
   })
 })
