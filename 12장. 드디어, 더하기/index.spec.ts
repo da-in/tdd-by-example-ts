@@ -1,4 +1,4 @@
-import { type Expression, Money } from './index'
+import { type Expression, Money, Bank } from './index'
 
 describe('화폐 예제', () => {
   it('testMultiplication', () => {

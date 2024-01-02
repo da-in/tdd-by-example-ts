@@ -1,5 +1,7 @@
 export interface Expression {}
 
+export class Bank {}
+
 export class Money implements Expression {
   protected _amount: number
   protected _currency: string
