@@ -6,7 +6,7 @@ export class Bank {
   }
 }
 
-export class Sum {
+export class Sum implements Expression {
   augend: Money
   addend: Money
 
