@@ -19,6 +19,7 @@ describe('화폐 예제', () => {
   })
 
   it('testSimpleAddition', () => {
+    const five: Money = Money.dollar(5)
     const sum: Expression = five.plus(five)
     const bank: Bank = new Bank()
     const reduced: Money = bank.reduce(sum, 'USD')
