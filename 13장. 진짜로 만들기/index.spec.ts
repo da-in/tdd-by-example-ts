@@ -25,4 +25,12 @@ describe('화폐 예제', () => {
     const reduced: Money = bank.reduce(sum, 'USD')
     expect(Money.dollar(10)).toMatchObject(reduced)
   })
+
+  it('testPlusReturnsSum', () => {
+    const five: Money = Money.dollar(5)
+    const result: Expression = five.plus(five)
+    const sum: Sum = result as Sum
+    expect(five).toMatchObject(sum.augend)
+    expect(five).toMatchObject(sum.addend)
+  })
 })
