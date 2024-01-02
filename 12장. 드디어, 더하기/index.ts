@@ -34,7 +34,7 @@ export class Money {
     return this._amount + ' ' + this._currency
   }
 
-  plus (addend: Money) {
+  plus (addend: Money): Expression {
     return new Money(this._amount + addend._amount, this._currency)
   }
 }
