@@ -1,6 +1,6 @@
 export interface Expression {}
 
-export class Money {
+export class Money implements Expression {
   protected _amount: number
   protected _currency: string
 
