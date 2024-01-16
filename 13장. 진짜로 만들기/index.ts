@@ -2,7 +2,9 @@ export interface Expression {}
 
 export class Bank {
   reduce (source: Expression, to: string): Money {
-    return Money.dollar(10)
+    const sum: Sum = source as Sum
+    const amount = sum.augend._amount + sum.addend._amount
+    return new Money(amount, to)
   }
 }
 
@@ -17,7 +19,7 @@ export class Sum implements Expression {
 }
 
 export class Money implements Expression {
-  protected _amount: number
+  _amount: number
   protected _currency: string
 
   constructor (amount: number, currency: string) {
