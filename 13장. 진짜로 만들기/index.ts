@@ -3,7 +3,7 @@ export interface Expression {}
 export class Bank {
   reduce (source: Expression, to: string): Money {
     if (source instanceof Money) {
-      return source
+      return source.reduce(to)
     }
     const sum: Sum = source as Sum
     return sum.reduce(to)
@@ -61,6 +61,10 @@ export class Money implements Expression {
 
   plus (addend: Money): Expression {
     return new Sum(this, addend)
+  }
+
+  reduce (to: string) {
+    return this
   }
 }
 
