@@ -3,8 +3,7 @@ export interface Expression {}
 export class Bank {
   reduce (source: Expression, to: string): Money {
     const sum: Sum = source as Sum
-    const amount = sum.augend._amount + sum.addend._amount
-    return new Money(amount, to)
+    return sum.reduce(to)
   }
 }
 
@@ -15,6 +14,11 @@ export class Sum implements Expression {
   constructor (augend: Money, addend: Money) {
     this.augend = augend
     this.addend = addend
+  }
+
+  reduce (to: string) {
+    const amount = this.augend._amount + this.addend._amount
+    return new Money(amount, to)
   }
 }
 
