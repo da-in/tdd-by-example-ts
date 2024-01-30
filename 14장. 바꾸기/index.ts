@@ -20,6 +20,15 @@ class Pair {
     this.from = from
     this.to = to
   }
+
+  equals (object: object) {
+    const pair: Pair = object as Pair
+    return this.from === pair.from && this.to === pair.to
+  }
+
+  hashcode () {
+    return 0
+  }
 }
 
 export class Sum implements Expression {
