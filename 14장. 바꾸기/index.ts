@@ -3,6 +3,8 @@ export interface Expression {
 }
 
 export class Bank {
+  rates = new Map<string, number>()
+
   reduce (source: Expression, to: string): Money {
     return source.reduce(this, to)
   }
