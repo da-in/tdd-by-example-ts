@@ -12,6 +12,10 @@ export class Bank {
   rate (from: string, to: string): number {
     return (from === 'CHF' && to === 'USD' ? 2 : 1)
   }
+
+  addRate (from: string, to: string, rate: number) {
+    this.rates.set(new Pair(from, to).key(), rate)
+  }
 }
 
 class Pair {
@@ -21,6 +25,11 @@ class Pair {
   constructor (from: string, to: string) {
     this.from = from
     this.to = to
+  }
+
+  // map checks referential equality when comparing keys
+  key () {
+    return JSON.stringify(this)
   }
 
   equals (object: object) {
