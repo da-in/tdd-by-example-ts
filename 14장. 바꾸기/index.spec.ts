@@ -53,4 +53,8 @@ describe('화폐 예제', () => {
     const result: Money = bank.reduce(Money.franc(2), 'USD')
     expect(Money.dollar(1)).toMatchObject(result)
   })
+
+  it('testIdentityRate', () => {
+    expect(new Bank().rate('USD', 'USD')).toBe(1)
+  })
 })
