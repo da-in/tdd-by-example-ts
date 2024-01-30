@@ -12,6 +12,16 @@ export class Bank {
   }
 }
 
+class Pair {
+  from: string
+  to: string
+
+  constructor (from: string, to: string) {
+    this.from = from
+    this.to = to
+  }
+}
+
 export class Sum implements Expression {
   augend: Money
   addend: Money
