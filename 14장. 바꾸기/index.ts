@@ -1,5 +1,5 @@
 export interface Expression {
-  reduce: (to: string) => Money
+  reduce: (bank: Bank, to: string) => Money
 }
 
 export class Bank {
@@ -17,7 +17,7 @@ export class Sum implements Expression {
     this.addend = addend
   }
 
-  reduce (to: string) {
+  reduce (bank: Bank, to: string) {
     const amount = this.augend._amount + this.addend._amount
     return new Money(amount, to)
   }
@@ -61,7 +61,7 @@ export class Money implements Expression {
     return new Sum(this, addend)
   }
 
-  reduce (to: string) {
+  reduce (bank: Bank, to: string) {
     const rate: number = this._currency === 'CHF' && to === 'USD' ? 2 : 1
     return new Money(this._amount / rate, to)
   }
