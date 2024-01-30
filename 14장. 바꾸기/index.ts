@@ -10,7 +10,9 @@ export class Bank {
   }
 
   rate (from: string, to: string): number {
-    return (from === 'CHF' && to === 'USD' ? 2 : 1)
+    // the example does not consider case when rate does not exist
+    const rate = this.rates.get(new Pair(from, to).key()) ?? 0
+    return rate
   }
 
   addRate (from: string, to: string, rate: number) {
