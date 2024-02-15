@@ -49,7 +49,7 @@ export class Sum implements Expression {
   augend: Expression
   addend: Expression
 
-  constructor (augend: Money, addend: Money) {
+  constructor (augend: Expression, addend: Expression) {
     this.augend = augend
     this.addend = addend
   }
