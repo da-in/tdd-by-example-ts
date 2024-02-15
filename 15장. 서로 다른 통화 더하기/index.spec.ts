@@ -57,4 +57,14 @@ describe('화폐 예제', () => {
   it('testIdentityRate', () => {
     expect(new Bank().rate('USD', 'USD')).toBe(1)
   })
+
+  it('testMixedAddition', () => {
+    const fiveBucks: Expression = Money.dollar(5)
+    const tenFrancs: Expression = Money.franc(10)
+    const bank: Bank = new Bank()
+
+    bank.addRate('CHF', 'USD', 2)
+    const result: Money = bank.reduce(fiveBucks.plus(tenFrancs), 'USD')
+    expect(Money.dollar(10)).toMatchObject(result)
+  })
 })
