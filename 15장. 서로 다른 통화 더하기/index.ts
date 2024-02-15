@@ -60,6 +60,10 @@ export class Sum implements Expression {
     const amount = this.augend.reduce(bank, to)._amount + this.addend.reduce(bank, to)._amount
     return new Money(amount, to)
   }
+
+  plus (addend: Expression): Expression {
+    return null
+  }
 }
 
 export class Money implements Expression {
