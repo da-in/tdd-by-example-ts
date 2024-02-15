@@ -60,7 +60,7 @@ describe('화폐 예제', () => {
 
   it('testMixedAddition', () => {
     const fiveBucks: Money = Money.dollar(5)
-    const tenFrancs: Money = Money.franc(10)
+    const tenFrancs: Expression = Money.franc(10)
     const bank: Bank = new Bank()
 
     bank.addRate('CHF', 'USD', 2)
