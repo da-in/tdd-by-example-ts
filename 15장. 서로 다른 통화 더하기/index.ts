@@ -46,8 +46,8 @@ class Pair {
 }
 
 export class Sum implements Expression {
-  augend: Money
-  addend: Money
+  augend: Expression
+  addend: Expression
 
   constructor (augend: Money, addend: Money) {
     this.augend = augend
