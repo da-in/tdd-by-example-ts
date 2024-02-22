@@ -89,4 +89,9 @@ describe('화폐 예제', () => {
     const result = bank.reduce(sum, 'USD')
     expect(Money.dollar(20)).toMatchObject(result)
   })
+
+  it('testPlusSameCurrencyReturnsMoney', () => {
+    const sum: Expression = Money.dollar(1).plus(Money.dollar(1))
+    expect(sum instanceof Money).toBeTruthy()
+  })
 })
